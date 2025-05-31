@@ -9,18 +9,21 @@ const Home = () => {
     <div className="flex justify-center items-center w-full h-screen flex-col">
       <Container>
         <Logo />
-        <div
-          className="mt-20 bg-[url('/images/word-game-images/StartGameButton.png')] bg-no-repeat bg-center bg-cover w-[200px] h-[200px]
+
+        <Link href={"/pickCategory"}>
+          <div
+            className="mt-20 bg-[url('/images/word-game-images/StartGameButton.png')] bg-no-repeat bg-center bg-cover w-[200px] h-[200px]
          flex justify-center items-center hover:scale-110 duration-500 cursor-pointer"
-        >
-          <Image
-            src={"/images/word-game-images/StartButtonTriangle.png"}
-            width={66}
-            height={62}
-            alt="PlayButton"
-            priority
-          />
-        </div>
+          >
+            <Image
+              src={"/images/word-game-images/StartButtonTriangle.png"}
+              width={66}
+              height={62}
+              alt="PlayButton"
+              priority
+            />
+          </div>
+        </Link>
         <div
           className="mt-[58px] bg-[url('/images/word-game-images/ButtonDefault.png')] w-[260px] h-[62px] cursor-pointer 
         flex items-center justify-center hover:scale-95 duration-500 hover:"
