@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-darkNavy: #261676;
+  --color-blue: #2463ff;
+  --color-white: #ffffff;
+  --default-font-family: "Mouse Memoirs", sans-serif;
+}
