@@ -25,12 +25,9 @@ const CapitalCities = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/data/data.json`,
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`/data/data.json`, {
+        cache: "no-store",
+      });
       const data: Data = await res.json();
       const capitalCities = data.categories["Capital Cities"];
       const randomCapitalCities =
