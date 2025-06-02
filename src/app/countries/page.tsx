@@ -58,26 +58,20 @@ const Countries = () => {
         setGamePauseMenu={setGamePauseMenu}
       />
       {/* ასოების კონტეინერები */}
-      <div className="flex gap-2 md:gap-3 px-[26px] md:px-[48px] justify-center items-center flex-wrap">
-        {word.split("").map((char, index) => {
-          if (char === " ") {
-            return <div key={index} className="w-4 md:w-6" />; // Space-ის დაშორება
-          }
-
-          return (
-            <div
-              style={{
-                boxShadow: "inset 4px 4px 10px #3C74FF, inset #140E66",
-              }}
-              key={index}
-              className="bg-blue rounded-[12px] md:rounded-[32px] w-10 md:w-[88px] h-[66px] md:h-[112px] lg:w-[112px] lg:h-[128px] flex justify-center items-center"
-            >
-              <h1 className="text-[40px] md:text-[64px] lg:text-[88px] text-white leading-[120%] tracking-[5%] uppercase text-center">
-                {correctLetters.includes(char) ? char : ""}
-              </h1>
-            </div>
-          );
-        })}
+      <div className="flex gap-2 md:gap-3 px-[26px] md:px-[48px] justify-center items-center">
+        {word.split("").map((char, index) => (
+          <div
+            style={{
+              boxShadow: "inset 4px 4px 10px #3C74FF, inset #140E66",
+            }}
+            key={index}
+            className="bg-blue rounded-[12px] md:rounded-[32px] w-10 md:w-[88px] h-[66px] md:h-[112px] lg:w-[112px] lg:h-[128px] flex justify-center items-center"
+          >
+            <h1 className="text-[40px] md:text-[64px] lg:text-[88px] text-white leading-[120%] tracking-[5%] uppercase text-center">
+              {correctLetters.includes(char) ? char : ""}
+            </h1>
+          </div>
+        ))}
       </div>
 
       {/* ანბანი */}
