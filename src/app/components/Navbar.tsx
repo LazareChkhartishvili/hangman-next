@@ -1,13 +1,18 @@
+"use client";
 import Image from "next/image";
 
 const Navbar = ({
   name,
   gamePauseMenu,
   setGamePauseMenu,
+  getHealthWidthClass,
+  health,
 }: {
   name: string;
   gamePauseMenu: boolean;
   setGamePauseMenu: (e: boolean) => void;
+  health: number;
+  getHealthWidthClass: (e: number) => string;
 }) => {
   return (
     <header
@@ -32,14 +37,27 @@ const Navbar = ({
         </h1>
       </div>
       <div className="flex items-center gap-4 lg:gap-[57px]">
-        <div className="w-[57px] md:w-[160px] lg:w-[240px] h-4 md:h-[31px] rounded-[96px] bg-white"></div>
-        <Image
-          className="md:w-[54px] md:h-[48px]"
-          src={"/images/word-game-images/icon-heart.svg"}
-          width={26}
-          height={24}
-          alt="heart_icon"
-        />
+        <>
+          <div
+            className="w-[57px] md:w-[160px] lg:w-[240px] h-4 md:h-[31px] rounded-[96px] bg-white flex items-center px-1
+             "
+          >
+            {health > 0 && (
+              <div
+                className={` px-1 py-[9px] transition-all duration-700 bg-darkNavy rounded-2xl ${getHealthWidthClass(
+                  health
+                )}`}
+              ></div>
+            )}
+          </div>
+          <Image
+            className="md:w-[54px] md:h-[48px]"
+            src={"/images/word-game-images/icon-heart.svg"}
+            width={26}
+            height={24}
+            alt="heart_icon"
+          />
+        </>
       </div>
     </header>
   );

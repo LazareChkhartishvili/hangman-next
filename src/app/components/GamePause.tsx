@@ -45,7 +45,13 @@ const GamePause = ({
                   Continue
                 </h2>
               </div>
-              <div className="bg-[url('/images/word-game-images/ButtonHover.png')] hover:scale-105 duration-500 cursor-pointer w-[275px] h-[62px] bg-contain bg-no-repeat flex justify-center items-center">
+              <div
+                onClick={() => {
+                  setGamePauseMenu(false);
+                  router.push("/pickCategory");
+                }}
+                className="bg-[url('/images/word-game-images/ButtonHover.png')] hover:scale-105 duration-500 cursor-pointer w-[275px] h-[62px] bg-contain bg-no-repeat flex justify-center items-center"
+              >
                 <h2 className="lg:text-[32px] lg:leading-[120%] lg:tracking-[5%] uppercase text-white">
                   New Category
                 </h2>
