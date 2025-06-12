@@ -85,7 +85,7 @@ const WordGame = ({ category }: { category: string }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50">
+    <div className="fixed inset-0 z-50 ">
       {gamePauseMenu && <GamePause setGamePauseMenu={setGamePauseMenu} />}
       <Navbar
         name={category}
@@ -174,9 +174,9 @@ const WordGame = ({ category }: { category: string }) => {
           </div>
         </>
       ) : (
-        <>
+        <div className="min-w-full lg:-mt-20 min-h-screen overflow-auto">
           {/* სიტყვა */}
-          <div className="flex gap-2 md:gap-3 px-[26px] md:px-[48px] justify-center items-center flex-wrap">
+          <div className="flex gap-2  md:gap-3 px-[26px] md:px-[48px] justify-center items-center flex-wrap">
             {word.split("").map((char, index) =>
               char === " " ? (
                 <div key={index} className="w-4 md:w-6" />
@@ -197,7 +197,7 @@ const WordGame = ({ category }: { category: string }) => {
           </div>
 
           {/* ანბანი */}
-          <div className="mt-[120px] flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 max-w-[1173px] mx-auto">
+          <div className="mt-[90px] overflow-auto flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 max-w-[1173px] mx-auto">
             {alphabet.map((letter) => (
               <button
                 key={letter}
@@ -216,7 +216,7 @@ const WordGame = ({ category }: { category: string }) => {
               </button>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
